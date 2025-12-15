@@ -36,6 +36,22 @@ final class InvMenuTypeRegistry{
 			->setBlockActorId("Hopper")
 			->setNetworkWindowType(WindowTypes::HOPPER)
 		->build());
+
+        $this->register(InvMenuTypeIds::TYPE_ENDER_CHEST, InvMenuTypeBuilders::BLOCK_ACTOR_FIXED()
+            ->setBlock(VanillaBlocks::ENDER_CHEST())
+            ->setSize(27)
+            ->setBlockActorId("EnderChest")
+            ->build());
+
+        $this->register(InvMenuTypeIds::TYPE_SHULKER, InvMenuTypeBuilders::BLOCK_FIXED()
+            ->setBlock(VanillaBlocks::SHULKER_BOX())
+            ->setSize(27)
+            ->build());
+
+        $this->register(InvMenuTypeIds::TYPE_CRAFTING_TABLE, InvMenuTypeBuilders::BLOCK_FIXED()
+            ->setBlock(VanillaBlocks::CRAFTING_TABLE())
+            ->setSize(9)
+            ->build());
 	}
 
 	public function register(string $identifier, InvMenuType $type) : void{
