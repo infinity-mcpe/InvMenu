@@ -41,17 +41,18 @@ final class InvMenuTypeRegistry{
             ->setBlock(VanillaBlocks::ENDER_CHEST())
             ->setSize(27)
             ->setBlockActorId("EnderChest")
-            ->build());
+        ->build());
 
         $this->register(InvMenuTypeIds::TYPE_SHULKER, InvMenuTypeBuilders::BLOCK_FIXED()
             ->setBlock(VanillaBlocks::SHULKER_BOX())
             ->setSize(27)
-            ->build());
+        ->build());
 
         $this->register(InvMenuTypeIds::TYPE_CRAFTING_TABLE, InvMenuTypeBuilders::BLOCK_FIXED()
             ->setBlock(VanillaBlocks::CRAFTING_TABLE())
             ->setSize(9)
-            ->build());
+            ->setNetworkWindowType(WindowTypes::WORKBENCH)
+        ->build());
 	}
 
 	public function register(string $identifier, InvMenuType $type) : void{
